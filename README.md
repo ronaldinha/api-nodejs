@@ -16,3 +16,6 @@ Rest API using nodeJS
 ## Documentation
 To generate it use <code>apidoc -i controllers -o doc/</code>.  
 To see the documentation use the path /v1/doc after starting the server
+
+## Test
+Launch tests with <code>npm test</code>
