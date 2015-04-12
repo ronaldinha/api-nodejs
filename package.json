@@ -1,0 +1,31 @@
+{
+  "name": "charity_api",
+  "version": "0.0.0",
+  "description": "a test api for the charity connection project",
+  "main": "app.js",
+  "scripts": {
+    "start": "nodemon app.js",
+    "test": "mocha"
+  },
+  "keywords": [
+    "charity",
+    "test",
+    "api"
+  ],
+  "author": "joanna vigné",
+  "license": "MIT",
+  "dependencies": {
+    "body-parser": "^1.12.2",
+    "express": "^4.12.3",
+    "mocha": "^2.2.4",
+    "mongoose": "^3.8.25",
+    "morgan": "^1.5.2",
+    "serve-static": "^1.9.2"
+  },
+  "apidoc": {
+    "name": "API documentation",
+    "version": "1.0.0",
+    "description": "documentation",
+    "title": "Documentation"
+  }
+}
