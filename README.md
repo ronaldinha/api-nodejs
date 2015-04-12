@@ -10,7 +10,7 @@ Rest API using nodeJS
     * <code>npm install -g mocha</code> (write test cases)
 4. Download the project
 5. Use <code>npm install</code> to download dependencies
-6. If you use a db that the server is running
+6. If you use a db check the server is running
 7. Use <code>npm start</code> to start the API
 
 ## Documentation
