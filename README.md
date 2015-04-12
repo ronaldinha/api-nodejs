@@ -14,5 +14,5 @@ Rest API using nodeJS
 7. Use <code>npm start</code> to start the API
 
 ## Documentation
-To generate a new version use <code>apidoc -i controllers -o doc/</code>.  
+To generate it use <code>apidoc -i controllers -o doc/</code>.  
 To see the documentation use the path /v1/doc after starting the server
