@@ -23,12 +23,12 @@ module.exports = { "app" : app };
 mongoose.connect(config.DB_URI);
 // handle succesful connections
 mongoose.connection.on('open', function (){
-	console.log('connected to database');
+  console.log('connected to database');
 });
 // handle connection failures
 mongoose.connection.on('error', function(){
-	console.error ('connection error');
-})
+  console.error ('connection error');
+});
 
 /* ROUTES */
 // declare the routes
@@ -45,7 +45,7 @@ app.use(function(req, res, next) {
 // development error handler
 // will print stacktrace
 if (app.get('env') === 'development') {
-  app.use(function(err, req, res, next) {
+  app.use(function(err, req, res) {
     res.status(err.status || 500);
     res.send({
       message: err.message,
@@ -53,15 +53,18 @@ if (app.get('env') === 'development') {
     });
   });
 }
-
-// production error handler
-// no stacktraces leaked to user
-/*app.use(function(err, req, res, next) {
-  res.status(err.status || 500);
-  res.send({
-    message: err.message
+else {
+  // production error handler
+  // no stacktraces leaked to user
+  app.use(function(err, req, res) {
+    res.status(err.status || 500);
+    res.send({
+      message: err.message
+    });
   });
-});*/
+}
+
+
 
 /* SERVER START */
 app.listen(config.PORT, function() {
