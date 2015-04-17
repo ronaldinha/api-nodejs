@@ -2,8 +2,9 @@
 var express = require('express');
 var bodyParser = require('body-parser');
 var mongoose = require('mongoose');
-var logger = require('morgan');
+var requestsLogger = require('morgan');
 var config = require('./configuration/conf'); // config parameters
+var logger = require('./configuration/logConf.js');
 
 /* EXPRESS */
 // create the express app
@@ -13,7 +14,7 @@ app.use(bodyParser.json());
 // parse application/x-www-form-urlencoded
 app.use(bodyParser.urlencoded({ extended: false}));
 // use the logger in dev mode
-app.use(logger('dev'));
+app.use(requestsLogger('dev'));
 
 // must before route definitions because they use the app variable
 module.exports = { "app" : app };
@@ -23,11 +24,11 @@ module.exports = { "app" : app };
 mongoose.connect(config.DB_URI);
 // handle succesful connections
 mongoose.connection.on('open', function (){
-  console.log('connected to database');
+  logger.info('connected to database');
 });
 // handle connection failures
 mongoose.connection.on('error', function(){
-  console.error ('connection error');
+  logger.error ('connection error');
 });
 
 /* ROUTES */
@@ -68,5 +69,5 @@ else {
 
 /* SERVER START */
 app.listen(config.PORT, function() {
-  console.log('Listening on PORT ' + config.PORT + '...')
+  logger.info('Listening on PORT ' + config.PORT + '...')
 });
