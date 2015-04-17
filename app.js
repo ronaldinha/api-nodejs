@@ -3,7 +3,7 @@ var express = require('express');
 var bodyParser = require('body-parser');
 var mongoose = require('mongoose');
 var logger = require('morgan');
-var configFile = require('./conf'); // config parameters
+var config = require('./conf'); // config parameters
 
 /* EXPRESS */
 // create the express app
@@ -20,7 +20,7 @@ module.exports = { "app" : app };
 
 /* MONGOOSE */
 // connect to mongoose
-mongoose.connect(configFile.DBURI);
+mongoose.connect(config.DB_URI);
 // handle succesful connections
 mongoose.connection.on('open', function (){
 	console.log('connected to database');
@@ -64,6 +64,6 @@ if (app.get('env') === 'development') {
 });*/
 
 /* SERVER START */
-app.listen(configFile.port, function() {
-  console.log('Listening on port ' + configFile.port + '...')
+app.listen(config.PORT, function() {
+  console.log('Listening on PORT ' + config.PORT + '...')
 });
