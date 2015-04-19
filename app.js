@@ -4,7 +4,7 @@ var bodyParser = require('body-parser');
 var mongoose = require('mongoose');
 var requestsLogger = require('morgan');
 var config = require('./configuration/conf'); // config parameters
-var logger = require('./configuration/logConf.js');
+var logger = require('./configuration/logger');
 
 /* EXPRESS */
 // create the express app

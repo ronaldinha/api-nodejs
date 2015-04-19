@@ -1,6 +1,10 @@
 # api-nodejs
 Rest API using nodeJS
 
+## Best practices
+Do NOT use console.log to print to the console. Use winston logger instead. The configuration file is in
+<code>/configuration/logger.js</code>.
+
 ## Installation instruction
 1. Install nodeJS
 2. Install mongoDB
