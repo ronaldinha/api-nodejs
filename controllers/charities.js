@@ -2,6 +2,7 @@ var express = require('express');
 var router = express.Router();
 // Load the models that you need
 // Example : var Charity = require('../dbMmodels').Charity;
+var Charity = require('../dbModels').Charity;
 
 /**
 * @api {get} /v1/charities/:name charities default endpoint title
@@ -26,6 +27,7 @@ router.get('/:name', function(req, res) {
 	//	res.send(JSON.stringify(charity, null, 4)); // Use the JSON.stringify(obj, null, spaces) to have pretty JSON
 	//});
 	var result = {"name": req.params.name};
+  result = new Charity({"name": req.params.name, "type": "test" });
 	res.type('application/json'); // Set the content-type
 	res.status(200); // Set the status code
 	res.send(JSON.stringify(result, null, 4)); // Use the JSON.stringify(obj, null, spacesNb) to have pretty JSON
