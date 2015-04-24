@@ -9,5 +9,5 @@ module.exports = {
 	Charity : Charity,
 	Mission : Mission,
 	Tag : Tag,
-	Volunteer : Volunteer
+	Volunteer : User
 };
