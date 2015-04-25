@@ -1,7 +1,25 @@
 // configuration parameters
-var DB_NAME = "localDB";
-var DB_PORT = 27017;
-var DB_URI = "mongodb://localhost:" + DB_PORT + "/" + DB_NAME;
+var LOCAL_DB = {
+  auth: false,
+  username: "",
+  password: "",
+  host: "localhost",
+  port: "27017",
+  name: "localDB"
+};
+
+var CLOUD_DB = {
+  auth: true,
+  username: "db_user",
+  password: "db_password",
+  host: "ds039331.mongolab.com",
+  port: "39331",
+  name: "db"
+};
+
+var DB = LOCAL_DB;
+var DB_URI = 'mongodb://' + ((DB.auth) ? DB.username + ':' + DB.password + '@' : '') + DB.host + ':' + DB.port + '/' + DB.name;
+
 var PORT = process.env.PORT || 3000;
 
 // if true, winston will also log into logs/debug.log and logs/exceptions.log
@@ -10,7 +28,6 @@ var LOG_TO_FILE = false;
 var CURRENT_VERSION = 'v1';
 
 module.exports = {
-	"DB_NAME" : DB_NAME,
 	"DB_URI" : DB_URI,
 	"PORT" : PORT,
   "LOG_TO_FILE" : LOG_TO_FILE,
