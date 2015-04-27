@@ -11,3 +11,5 @@ var CharitySchema = new Schema({
 }, { collection: 'charities' });
 
 Charity = mongoose.model('Charity', CharitySchema);
+
+module.exports = Charity;

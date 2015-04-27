@@ -24,3 +24,5 @@ var MissionSchema = new Schema({
 }, { collection: 'missions' });
 
 Mission = mongoose.model('Mission', MissionSchema);
+
+module.exports = Mission;
