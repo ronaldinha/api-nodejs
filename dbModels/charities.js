@@ -10,6 +10,6 @@ var CharitySchema = new Schema({
 	tags: [ Schema.Types.ObjectId ]
 }, { collection: 'charities' });
 
-Charity = mongoose.model('Charity', CharitySchema);
+var Charity = mongoose.model('Charity', CharitySchema);
 
 module.exports = Charity;

@@ -17,6 +17,6 @@ var VolunteerSchema = new Schema({
 
 VolunteerSchema.index({ lastLocation : '2dsphere' });
 
-Volunteer = mongoose.model('Volunteer', VolunteerSchema);
+var Volunteer = mongoose.model('Volunteer', VolunteerSchema);
 
 module.exports = Volunteer;
