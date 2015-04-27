@@ -23,4 +23,6 @@ var MissionSchema = new Schema({
 	status: Number // -1: cancelled, 0: finished, 1: active
 }, { collection: 'missions' });
 
-Mission = mongoose.model('Mission', MissionSchema);
+var Mission = mongoose.model('Mission', MissionSchema);
+
+module.exports = Mission;

@@ -1,8 +1,8 @@
 // models
-require('./charities');
-require('./missions');
-require('./tags');
-require('./volunteers');
+var Charity = require('./charities');
+var Mission = require('./missions');
+var Tag = require('./tags');
+var Volunteer = require('./volunteers');
 
 // exports
 module.exports = {
